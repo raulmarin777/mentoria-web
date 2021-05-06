@@ -1,0 +1,26 @@
+body
+{
+	font-family: "Poppins", sans-serif; /* si no encuentra la primera toma la segunda*/
+    background-image: url("img/fondo.jpg");
+    background-size: 100vw;
+}
+
+.menu {
+    /*border-style:solid;*/
+    margin-top: 1vw;
+    margin-left: 70vw;
+    margin-right: 10vw;
+    display: flex;
+    font-size: 1vw;
+    flex-direction: column;
+    background-color: darkgray;
+    opacity: 50%;
+    
+}
+
+.opcion{
+    margin-top: 1vw;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #43414e;
+}
