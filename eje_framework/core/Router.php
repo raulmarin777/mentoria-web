@@ -25,12 +25,12 @@ class Router{
         $callback = $this->routes[$method][$path] ?? false;
         var_dump($path);
         var_dump($method);
-        
+
         if($callback == false){
             echo "Not Found";
             exit;
         }
-        /*print_r($this->routes);
+        /*print_r($this->routes);*/
 
         echo call_user_func($callback);
     }
