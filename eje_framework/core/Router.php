@@ -3,7 +3,8 @@
 namespace app\core;
 
 class Router{
-    Public Request $request;
+
+    public Request $request;
     protected array $routes = [];
 
     public function __construct (\app\core\Request $request){
