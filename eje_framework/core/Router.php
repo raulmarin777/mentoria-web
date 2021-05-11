@@ -22,6 +22,7 @@ class Router{
         $path = $this->request->getPath();
         $method = $this->request->getMethod();
 
+        print_r($this->routes);
         var_dump($path);
         var_dump($method);
     }
