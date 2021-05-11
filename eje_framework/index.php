@@ -7,11 +7,11 @@ use app\core\Application;
 $app = new Application();
 
 
-$app->router->get('/', function(){
+$app->router->get('/eje_framework/', function(){
     return "Hola Raúl";
 });
 
-$app->router->get('/contact', function(){
+$app->router->get('/eje_framework/contact', function(){
     return "Contact";
 });
 
