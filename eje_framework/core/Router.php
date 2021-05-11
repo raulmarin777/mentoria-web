@@ -10,8 +10,8 @@ class Router{
     }
 
     public function resolve(){
-        echo '<pred>';
+        echo '<pre>';
         var_dump($_SERVER);
-        echo '</pred>';
+        echo '</pre>';
     }
 }
