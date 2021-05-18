@@ -10,6 +10,6 @@ $app = new Application();
 $app->router->get('/', 'home');
 
 /*$app->router->get('/eje_framework/contact', 'contact');*/
-$app->router->get('/contact', 'contact');
+$app->router->get('/', 'contact');
 
 $app->run();
