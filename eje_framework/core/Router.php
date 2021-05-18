@@ -39,7 +39,6 @@ class Router{
 
     public function renderView($view){
         //interpolacion
-        echo 'mensaje' . $view;
         include_once __DIR__ . "/../views/$view.php";
     }
 }
