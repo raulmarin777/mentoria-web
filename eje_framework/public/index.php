@@ -10,8 +10,6 @@ $app->router->get('/eje_framework/', function(){
     return "Hola Raúl";
 });
 
-$app->router->get('/eje_framework/contact', function(){
-    return "Contact";
-});
+$app->router->get('/eje_framework/contact', "Contact");
 
 $app->run();
