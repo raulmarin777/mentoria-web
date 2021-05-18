@@ -27,11 +27,18 @@ class Router{
         var_dump($method);*/
 
         if($callback == false){
-            echo "Not Found";
-            exit;
+            return "Not Found";
         }
         /*print_r($this->routes);*/
 
-        echo call_user_func($callback);
+        if (is_string($callback)){
+            return $this->renderView($callback);
+        }
+        return call_user_func($callback);
+    }
+
+    public function renderView($view){
+        //interpolacion
+        include_once __DIR__ . "../views/$view.php";
     }
 }
