@@ -6,10 +6,8 @@ use app\core\Application;
 
 $app = new Application();
 
-$app->router->get('/eje_framework/', function(){
-    return "Hola Raúl";
-});
+$app->router->get('/eje_framework/', "home");
 
-$app->router->get('/eje_framework/contact', "Contact");
+$app->router->get('/eje_framework/contact', "contact");
 
 $app->run();
