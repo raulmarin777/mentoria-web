@@ -40,10 +40,12 @@ class Router{
     public function renderView($view){
         //interpolacion
         $layoutContent = $this->layoutContent();
-        include_once Application::$ROOT_DIR . "/../views/$view.php";
+        include_once Application::$ROOT_DIR . "/views/$view.php";
     }
 
     public function layoutContent(){
-        include_once Application::$ROOT_DIR . "/../views/layouts/main.php";
+        ob_start();
+        include_once Application::$ROOT_DIR . "/views/layouts/main.php";
+        return ob_get_clean();
     }
 }
