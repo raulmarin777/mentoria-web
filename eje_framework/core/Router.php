@@ -39,6 +39,11 @@ class Router{
 
     public function renderView($view){
         //interpolacion
+        $layoutContent = $this->layoutContent();
         include_once Application::$ROOT_DIR . "/../views/$view.php";
+    }
+
+    public function layoutContent(){
+        include_once Application::$ROOT_DIR . "/../views/layouts/main.php";
     }
 }
