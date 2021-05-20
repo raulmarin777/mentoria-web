@@ -40,7 +40,7 @@ class Router{
     public function renderView($view){
         //interpolacion
         $layoutContent = $this->layoutContent();
-        $viewContent = $this->renderOnlyView();
+        $viewContent = $this->renderOnlyView($view);
         return str_replace('{{content}}', $viewContent, $layoutContent);
     }
 
