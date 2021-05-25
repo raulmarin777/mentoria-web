@@ -32,7 +32,7 @@ class Router{
 
         if($callback == false){
             //Application::$app->response->setStatusCode(404); es lo mismo q lo de abajo
-            $this->response->setStatusCode(404)
+            $this->response->setStatusCode(404);
             return "Not Found";
         }
         /*print_r($this->routes);*/
