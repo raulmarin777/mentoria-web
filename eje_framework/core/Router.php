@@ -23,10 +23,12 @@ class Router{
         $method = $this->request->getMethod();
 
         $callback = $this->routes[$method][$path] ?? false;
+        //Application::$app;
         /*var_dump($path);
         var_dump($method);*/
 
         if($callback == false){
+            Application::$app->response->setStatusCode(404);
             return "Not Found";
         }
         /*print_r($this->routes);*/
