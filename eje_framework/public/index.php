@@ -13,8 +13,8 @@ $app = new Application(dirname(__DIR__));
 $app->router->get('/', 'home');
 
 /*$app->router->get('/eje_framework/contact', 'contact');*/
-$app->router->get('/contact', 'contact');
-$app->router->get('/contact', function(){
+$app->router->get('/contact', 'contact'); //se visita por URL
+$app->router->post('/contact', function(){ // se activa por formulario
     return "Procesando informacion";
 });
 

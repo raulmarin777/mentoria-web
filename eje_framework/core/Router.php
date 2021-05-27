@@ -50,7 +50,6 @@ class Router{
 
     public function renderContent($viewContent){
         $layoutContent = $this->layoutContent();
-        $viewContent = $this->renderOnlyView($viewContent);
         return str_replace('{{content}}', $viewContent, $layoutContent);
     }    
 
@@ -69,7 +68,7 @@ class Router{
 
     public function renderOnlyView($view){
         ob_start();
-        $layoutContent = $this->layoutContent();
+//        $layoutContent = $this->layoutContent();
         include_once Application::$ROOT_DIR . "/views/$view.php";
         return ob_get_clean();
     }
