@@ -10,12 +10,14 @@ use app\core\Application;
 $app = new Application(dirname(__DIR__));
 
 /*$app->router->get('/eje_framework/', 'home');*/
-$app->router->get('/', 'home');
-
-/*$app->router->get('/eje_framework/contact', 'contact');*/
+/*$app->router->get('/', 'home');
 $app->router->get('/contact', 'contact'); //se visita por URL
 $app->router->post('/contact', function(){ // se activa por formulario
     return "Procesando informacion";
-});
+});*/
+
+$app->router->get('/', [\app\Controllers\SiteController::class, 'home']);
+$app->router->get('/contact', [\app\Controllers\SiteController::class, 'contact']);
+$app->router->post('/contact', [\app\Controllers\SiteController::class, 'handleContact']);
 
 $app->run();

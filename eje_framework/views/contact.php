@@ -13,5 +13,5 @@
     <label class="form-label">Body</label>
     <textarea name="body" class="form-control" id="" cols="30" rows="10"></textarea>
   </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
+  <button type="submit" class="btn btn-primary">Send</button>
 </form>
