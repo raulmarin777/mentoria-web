@@ -16,8 +16,8 @@ $app->router->post('/contact', function(){ // se activa por formulario
     return "Procesando informacion";
 });*/
 
-$app->router->get('/', [\app\Controllers\SiteController::class, 'home']);
-$app->router->get('/contact', [\app\Controllers\SiteController::class, 'contact']);
-$app->router->post('/contact', [\app\Controllers\SiteController::class, 'handleContact']);
+$app->router->get('/', [\app\controllers\SiteController::class, 'home']);
+$app->router->get('/contact', [\app\controllers\SiteController::class, 'contact']);
+$app->router->post('/contact', [\app\controllers\SiteController::class, 'handleContact']);
 
 $app->run();
