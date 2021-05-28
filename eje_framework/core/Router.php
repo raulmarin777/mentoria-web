@@ -78,9 +78,8 @@ class Router{
 
     public function renderOnlyView($view, $params){
         foreach ($params as $key => $value){
-            echo "$key => $value";
+            $$key = $value;
         }
-        exit;
         //deja en memoria cache
         ob_start();
         //$layoutContent = $this->layoutContent();
