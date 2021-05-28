@@ -55,7 +55,7 @@ class Router{
             //esto transforma el string a objeto            
         }
 
-        return call_user_func($callback);
+        return call_user_func($callback, $this->request);
     }
 
     public function renderContent($viewContent){
