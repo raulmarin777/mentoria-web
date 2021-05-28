@@ -2,6 +2,7 @@
 
 namespace app\controllers;
 
+use app\core\Application;
 use app\core\Controller;
 
 class SiteController extends Controller{
@@ -21,6 +22,8 @@ class SiteController extends Controller{
     }
 
     public function handleContact(){
+        $body = Application::$app->request->getBody();
+        var_dump($body);
         return "Procesando informacion";
     }
 }
