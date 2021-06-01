@@ -3,12 +3,6 @@
 namespace app\core;
 
 class Request{
-    
-    public function getMethod()
-    {
-        return $_SERVER['REQUEST_METHOD'];
-    }
-
     public function getPath()
     {
         $path = $_SERVER['REQUEST_URI'] ?? '/';
@@ -17,6 +11,11 @@ class Request{
             return $path;
         }
         return substr($path, 0, $position);
+    }
+
+    public function getMethod()
+    {
+        return strtolower($_SERVER['REQUEST_METHOD']);
     }
 
     public function isPost()

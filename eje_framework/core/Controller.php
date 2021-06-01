@@ -2,8 +2,6 @@
 
 namespace app\core;
 
-use PhpOffice\PhpSpreadsheet\Chart\Layout;
-
 class Controller{
     public string $layout = 'main';
 
