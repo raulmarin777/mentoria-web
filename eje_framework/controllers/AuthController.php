@@ -17,7 +17,7 @@ class AuthController extends Controller{
 
         if ($request->isPost()){
             $registerModel = new RegisterModel();
-            return 'Procesando datos del Formulario..');
+            return 'Procesando datos del Formulario..';
         } 
         return $this->render('register');
     }
