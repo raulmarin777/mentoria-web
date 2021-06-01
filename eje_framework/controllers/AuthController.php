@@ -2,8 +2,8 @@
 
 namespace app\controllers;
 
-use app\core\Controller;
 use app\core\Request;
+use app\core\Controller;
 use app\models\RegisterModel;
 
 class AuthController extends Controller{
@@ -13,12 +13,12 @@ class AuthController extends Controller{
     }
 
     public function register(Request $request){
+        $this->setLayout('auth');
+
         if ($request->isPost()){
             $registerModel = new RegisterModel();
-            return $this->render('register');
-        }
-        
+            return 'Procesando datos del Formulario..');
+        } 
+        return $this->render('register');
     }
-
-   
 }
