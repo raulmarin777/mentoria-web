@@ -27,7 +27,7 @@ abstract class Model{
 
     public function validate(){
         foreach ($this->rules() as $attribute => $rules){
-            $value = $this->attribute; 
+            $value = $this->$attribute; 
             foreach($rules as $rule){
                 $rulename = $rule;
                 if (!is_string($rulename)){
