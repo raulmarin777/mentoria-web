@@ -39,7 +39,7 @@ abstract class Model{
                     $this->addError($attribute, self::RULE_REQUIRED);
                 }
 
-                if ($rulename === self::RULE_EMAIL && filter_var($value, FILTER_VALIDATE_EMAIL)){
+                if ($rulename === self::RULE_EMAIL && !filter_var($value, FILTER_VALIDATE_EMAIL)){
                     $this->addError($attribute, self::RULE_EMAIL);
                 }
                 
