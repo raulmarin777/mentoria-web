@@ -51,7 +51,7 @@ abstract class Model{
                     $this->addError($attribute, self::RULE_MAX, $rule);
                 }
 
-                if ($rulename === self::RULE_MATCH && $value != $this->{$rule['mach']}){
+                if ($rulename === self::RULE_MATCH && $value != $this->{$rule['match']}){
                     $this->addError($attribute, self::RULE_MATCH, $rule);
                 }
             }
@@ -73,7 +73,7 @@ abstract class Model{
             self::RULE_EMAIL => 'This field must be an email',
             self::RULE_MIN => 'Min length of the field must be {min}',
             self::RULE_MAX => 'Max length of the field must be {max}',
-            self::RULE_MATCH => 'This fiels must be the same as {attribute}',
+            self::RULE_MATCH => 'This field must be the same as {match}',
         ];
     }
 
