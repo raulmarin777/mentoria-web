@@ -18,6 +18,8 @@ $config = [
  /*  echo __DIR__;         /var/www/systems/mentoria-web/eje_framework/public */
 /* echo dirname(__DIR__);  /var/www/systems/mentoria-web/eje_framework */
 
+var_dump($config);
+
 $app = new Application(dirname(__DIR__), $config);
 
 /*$app->router->get('/eje_framework/', 'home');*/
