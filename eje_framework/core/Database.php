@@ -8,7 +8,7 @@ class Database{
 
     public function __construct(array $config)
     {
-        $dsn = $config['dns'] ?? '';
+        $dsn = $config['dsn'] ?? '';
         $username = $config['user'] ?? '';
         $password = $config['password'] ?? '';
 
