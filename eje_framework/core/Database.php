@@ -17,6 +17,6 @@ class Database{
     }
 
     public fucntion applyMigrations(){
-        echo "Running applyMigrations "
+        echo "Running applyMigrations ";
     }
 }
