@@ -2,7 +2,7 @@
 
 namespace app\core;
 
-/* Aca va tosdo lo que se quiere instancia r solo una vez*/
+/* Aca va todo lo que se quiere instanciar solo una vez*/
 
 class Application{
     public static string $ROOT_DIR;
