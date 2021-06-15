@@ -23,6 +23,6 @@ $config = [
  /*  echo __DIR__;         /var/www/systems/mentoria-web/eje_framework/public */
 /* echo dirname(__DIR__);  /var/www/systems/mentoria-web/eje_framework */
 
-$app = new Application(__DIR__);
+$app = new Application(__DIR__, $config);
 
 $app->db->applyMigrations();
