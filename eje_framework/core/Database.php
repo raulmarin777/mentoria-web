@@ -9,7 +9,7 @@ class Database{
     public function __construct(array $config)
     {
         $dsn = $config['dns'] ?? '';
-        $username = $config['user'] ?? '';
+        $username = $config['username'] ?? '';
         $password = $config['password'] ?? '';
 
         $this->pdo = new \PDO($dsn, $username, $password);
