@@ -16,7 +16,7 @@ class Database{
         $this->pdo->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
     }
 
-    public fucntion applyMigrations(){
+    public function applyMigrations(){
         echo "Running applyMigrations ";
     }
 }
