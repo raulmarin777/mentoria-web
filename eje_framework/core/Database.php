@@ -25,7 +25,20 @@ class Database{
         $appliendMigrations = $this->getAppliedMigrations();
 
         $files = scandir(Application::$ROOT_DIR . '/migrations');
-            var_dump($files);
+        $toApplyMigrations = array_diff($appliendMigrations, $files);
+        
+        foreach ($toApplyMigrations as $migrations){
+            if ($migrations === '.' || $migrations === '..'){
+                continue;
+            }
+
+            require_once Application::$ROOT_DIR . '/migrations/' . $migrations; 
+            $className = pathinfo($migrations, PATHINFO_FILENAME);
+            $instance = new $className();
+            echo "Appliying migration $migrations \n";
+            $instance->up();
+            echo "Applied migration $migrations \n";
+        }
     
     }
 
