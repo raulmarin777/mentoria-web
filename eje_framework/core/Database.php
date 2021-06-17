@@ -25,7 +25,7 @@ class Database{
         $appliendMigrations = $this->getAppliedMigrations();
 
         $files = scandir(Application::$ROOT_DIR . '/migrations');
-        $toApplyMigrations = array_diff($appliendMigrations, $files);
+        $toApplyMigrations = array_diff($files, $appliendMigrations);
         
         foreach ($toApplyMigrations as $migrations){
             if ($migrations === '.' || $migrations === '..'){
