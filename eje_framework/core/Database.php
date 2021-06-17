@@ -23,6 +23,11 @@ class Database{
     public function applyMigrations(){
         $this->createMigrationsTable();
         $appliendMigrations = $this->getAppliedMigrations();
+
+        $files = scandir(Application::$ROOT_DIR . '/migrations');
+        echo '<pre>';
+        var_dump(file);
+        echo '<pre>';
     }
 
     public function createMigrationsTable(){
