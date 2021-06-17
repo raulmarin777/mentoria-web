@@ -46,7 +46,7 @@ class Database{
             $this->saveMigrations($newMigrations);
         }
         else{
-            echo "All migrations has been applied \n"
+            echo "All migrations has been applied \n";
         }
     
     }
