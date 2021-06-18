@@ -1,7 +1,6 @@
 <?php
 
-class m0001_initial
-{
+class m00001_initial{
     public function up()
     {        
         $db = \app\core\Application::$app->db;
