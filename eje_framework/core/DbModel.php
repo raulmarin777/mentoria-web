@@ -41,7 +41,7 @@ abstract class DbModel extends Model{
         $statement = $pdo->prepare("
                 SELECT COLUMN_NAME 
                   FROM INFORMATION_SCHEMA.COLUMNS 
-                 WHERE TABLE_NAME = $tableName");
+                 WHERE TABLE_NAME = '" . $tableName ."'");
         $statement->execute();
 
         return $statement->fetchAll(\PDO::FETCH_COLUMN);
