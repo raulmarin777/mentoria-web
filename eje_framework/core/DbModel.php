@@ -37,6 +37,7 @@ abstract class DbModel extends Model{
     }
 
     public function getAttribute($tableName): array{
+        $pdo = Application::$app->db->pdo;
         $statement = $pdo->prepare("
                 SELECT COLUMN_NAME 
                   FROM INFORMATION_SCHEMA.COLUMNS 
