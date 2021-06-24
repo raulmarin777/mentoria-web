@@ -15,6 +15,10 @@ class RegisterModel extends DbModel {
         return 'users2';
     }
 
+    public function schemaName():string{
+        return 'registro';
+    }
+
     public function save(){
         $this->password = password_hash($this->password, PASSWORD_DEFAULT);
         return parent::save();
