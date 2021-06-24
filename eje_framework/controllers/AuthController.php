@@ -20,7 +20,7 @@ class AuthController extends Controller{
             
 
             $registerModel->loadData($request->getBody());
-
+//valida informacion y llama al save
             if ($registerModel->validate() && $registerModel->save()){
                 return 'Success';
             }

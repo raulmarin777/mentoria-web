@@ -5,6 +5,7 @@ namespace app\core;
 // self hace referencias a la clase y solo se usa en la clase
 // this a los atributos de la clase, se puede utilizar en todos lados
 
+// no podran crear objetos
 abstract class Model{
 
     public const RULE_REQUIRED = 'requered';
@@ -15,6 +16,7 @@ abstract class Model{
 
     public $errors = [];
 
+    // llena los datos del formulario
     public function loadData($data){
         foreach ($data as $key => $value){
             if(property_exists($this, $key)){
@@ -23,6 +25,7 @@ abstract class Model{
         }
     }
 
+    
     abstract public function rules(): array;
 
     public function validate(){
