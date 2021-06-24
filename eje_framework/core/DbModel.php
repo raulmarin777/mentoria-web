@@ -14,8 +14,7 @@ abstract class DbModel extends Model{
         $tableName = $this->tableName();
         //$attributes = $this->attributes();
         $attributes =  $this->getAttribute($tableName); 
-        var_dump ($attributes);
-        exit;
+
         $params = array_map(fn($attr) => ":$attr", $attributes);
         
 
