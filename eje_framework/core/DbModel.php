@@ -10,7 +10,7 @@ abstract class DbModel extends Model{
 
     public function save(){
         
-        $db = Application::$app->db->pdo;
+        $pdo = Application::$app->db->pdo;
         $tableName = $this->tableName();
         $attributes = $this->attributes();
         $params = array_map(fn($attr) => ":$attr", $attributes);
@@ -20,7 +20,7 @@ abstract class DbModel extends Model{
         INSERT INTO $tableName
                 (". implode(",", $attributes) .")
         VALUES
-                (". implode(",", $params) .")
+                (". implode(",", $params) . ")
         ");
 
         foreach ($attributes as $attribute){
