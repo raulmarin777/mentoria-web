@@ -13,10 +13,10 @@ abstract class DbModel extends Model{
         $db = Application::$app->db->pdo;
         $tableName = $this->tableName();
         $attributes = $this->attributes();
-        $params array_map(fn($attr) => ":$attr", $attributes);
+        $params = array_map(fn($attr) => ":$attr", $attributes);
         
         //INSERT INTO users () VALUES (:firstName, :lastName, :email, :password, :confirmPassword) ;
-        $pdo->prepare("
+        $statement = $pdo->prepare("
         INSERT INTO $tableName
                 (". implode(",", $attributes) .")
         VALUES
