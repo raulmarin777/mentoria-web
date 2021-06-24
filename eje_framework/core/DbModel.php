@@ -43,7 +43,8 @@ abstract class DbModel extends Model{
                 SELECT COLUMN_NAME 
                   FROM INFORMATION_SCHEMA.COLUMNS 
                  WHERE TABLE_SCHEMA = '" . $schemaName . "'
-                   AND TABLE_NAME = '" . $tableName . "'");
+                   AND TABLE_NAME = '" . $tableName . "'
+                   AND EXTRA <> 'auto_increment' ");
         $statement->execute();
 
         return $statement->fetchAll(\PDO::FETCH_COLUMN);
