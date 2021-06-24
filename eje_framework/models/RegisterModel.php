@@ -30,7 +30,7 @@ class RegisterModel extends DbModel {
         ];
     }
 
-    public function attributes(): array{
+    /*public function attributes(): array{
         return[
             'firstName',
             'lastName',
@@ -38,5 +38,5 @@ class RegisterModel extends DbModel {
             'password'
         ]; // se deben sacar de la bd https://thispointer.com/mysql-get-column-names/
 
-    }
+    }*/
 }
