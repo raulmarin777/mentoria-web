@@ -13,7 +13,7 @@ abstract class DbModel extends Model{
         $pdo = Application::$app->db->pdo;
         $tableName = $this->tableName();
         //$attributes = $this->attributes();
-        $attributes = getAttribute($tableName); 
+        $attributes =  $this->getAttribute($tableName); 
         var_dump ($attributes);
         exit;
         $params = array_map(fn($attr) => ":$attr", $attributes);
