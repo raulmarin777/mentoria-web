@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elemplo_1</title>
+</head>
+<body>
+    <script>
+        var tasks = [
+            {
+                "name": "Estudiar JavaScript",
+                "duration": 60
+            },
+            {
+                "name": "Estudiar Vue",
+                "duration": 3600
+            },
+            {
+                "name": "Estudiar Laravel",
+                "duration": 100
+            }
+        ];
+
+        //let taskNames = [];
+        /*for (let i = 0; i < tasks.length; i++){
+            taskNames.push(tasks[i].name);
+        }*/
+
+        /*tasks.forEach(function(task){
+            taskNames.push(task.name);
+        });*/
+
+        // map filter reduce
+
+        //let taskNames = tasks.map((task) => task.name); 
+
+        /*let difficultTasks = [];
+        tasks.forEach(function(task){
+            if (task.duration >= 100){
+                difficultTasks.push(task.name);
+            }
+        });*/
+
+        /*let difficultTasks = tasks.filter(function(task){
+            return task.duration > 100;
+        });*/
+
+        let difficultTasks = tasks
+            .filter((task) => task.duration >= 100)
+            .map((task) => task.name);
+
+        console.log(difficultTasks);
+
+        let nombre = "Raul Marin";
+        console.log('Hola, ' + nombre.toUpperCase());
+
+    </script>
+</body>
+</html>
