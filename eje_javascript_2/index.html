@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <title>Ejemplo_2</title>
     <style>
         .square{
@@ -22,8 +23,66 @@
     </style>
 </head>
 <body>
-    <div class="square red"></div>
-    <button>Change Color</button>
+    <div id="parentDiv">
+        <div id="squareDiv" class="square red"></div>
+        <button id="changeColorButton">Change Color</button>
+    </div>
+    <img id="imgLoad" alt="">
+    <script>
+        //ejemplo de uso de DOM
+        /*document
+            .getElementById('changeColorButton')
+            .addEventListener('click', function(event){
+                //event.stopPropagation();// permite que no se propague al padre
+                let divElement = document
+                        .getElementById('squareDiv');
+                
+                if (divElement.classList.contains('red')){
+                    divElement.classList.replace('red', 'blue');
+                }else{
+                    divElement.classList.replace('blue', 'red');
+                }
+                console.log(event);
+            });
 
+        document
+            .getElementById('parentDiv')
+            .addEventListener('click', function(event){
+                console.log('Yeah Baby');
+            });*/
+
+        // Ejemplo JQuery
+            /*$('#changeColorButton').click(function(event){
+                if ($('#squareDiv').hasClass('red')){
+                    $('#squareDiv')
+                        .removeClass('red')
+                        .addClass('blue');
+                } else{
+                    $('#squareDiv')
+                        .removeClass('blue')
+                        .addClass('red');
+                }
+
+                $("#squareDiv").fadeOut("slow", function(){
+                console.log("Desaparecio")
+                });
+            });*/
+
+        // Ejemplo Ajax
+        $('#changeColorButton').click(function(event){
+            $.getJSON("https://aws.random.cat/meow?ref=public-apis", function(data){
+                console.log(data);
+                $('#imgLoad').attr('src',data.file);          
+            });
+        });
+
+        /*$('#changeColorButton').click(function(event){
+            $.getJSON("https://aws.random.cat/meow?ref=public-apis", function(data){
+            console.log(data);
+            $('#imgLoad').attr('src',data.file);
+            });        
+        });*/
+
+    </script>
 </body>
 </html>

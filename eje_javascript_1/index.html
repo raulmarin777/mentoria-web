@@ -47,15 +47,21 @@
             return task.duration > 100;
         });*/
 
-        let difficultTasks = tasks
+        /*let difficultTasks = tasks
             .filter((task) => task.duration >= 100)
             .map((task) => task.name);
 
         console.log(difficultTasks);
 
         let nombre = "Raul Marin";
-        console.log('Hola, ' + nombre.toUpperCase());
+        console.log('Hola, ' + nombre.toUpperCase());*/
 
+        let frutas = ['Manzana','Peras','Naranjas','Platanos'];
+        let frutasEliminadas = frutas.splice(1, 1, 'Durazno');
+
+        console.log('Frutas=' + frutas);
+        console.log('FrutasEliminadas=' +  frutasEliminadas);
+        console.log('Indice de Platano=' + frutas.indexOf('Platanos'));
     </script>
 </body>
 </html>
