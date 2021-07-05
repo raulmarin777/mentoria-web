@@ -72,7 +72,12 @@
         $('#changeColorButton').click(function(event){
             $.getJSON("https://aws.random.cat/meow?ref=public-apis", function(data){
                 console.log(data);
-                $('#imgLoad').attr('src',data.file);          
+                $('#imgLoad')
+                    .attr('src',data.file)
+                    .fadeIn("slow")
+                    .click(function(){
+                        $("#imgLoad").fadeOut("slow");
+                    });          
             });
         });
 
