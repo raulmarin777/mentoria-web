@@ -6,27 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <title>Ejemplo_3</title>
-    <style>
-        .square{
-            width: 100px;
-            height: 100px;
-        }
-        
-        .red {
-            background-color: red;
-        }
-
-        .blue {
-            background-color: blue;
-        }
-
-    </style>
 </head>
 <body>
-    <div id="parentDiv">
-        <div id="squareDiv" class="square red"></div>
-        <button id="changeColorButton">Load User</button>
-    </div>
+    <button id="loadUser">Load User</button>
     <img id="imgLoad" alt="">
     <table>
         <thead>
@@ -38,5 +20,12 @@
 
         </tbody>
     </table>
+    <script>
+        $('#loadUser').click(function(event){
+            $.getJSON("http://www.mentoria7.segic.cl/eje_javascript_3/api.php", function(data){
+                console.log(data);
+            });
+        });
+    </script>
 </body>
 </html>
