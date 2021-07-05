@@ -24,6 +24,14 @@
         $('#loadUser').click(function(event){
             $.getJSON("http://www.mentoria7.segic.cl/eje_javascript_3/api.php", function(data){
                 console.log(data);
+
+                let names = data.map((user)=> user.firstName + " " + user.firstName);
+                console.log(names);
+
+                names.ForEach(name => {
+                    let trElement = "<tr><td>" + name + "</td></tr>";
+                    $('#userTable')
+                });
             });
         });
     </script>
