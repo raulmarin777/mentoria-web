@@ -9,7 +9,7 @@
     $pdo = new \PDO($dsn, $dbuser, $dbpassword);
 
     $sql ="SELECT * FROM users";
-    $statement = $this->pdo->prepare($sql);
+    $statement = $pdo->prepare($sql);
     $statement->execute();
 
     $rows = $statement->fetchAll(\PDO::FETCH_ASSOC);
