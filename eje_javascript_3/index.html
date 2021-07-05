@@ -32,7 +32,7 @@
                     let trElement = "<tr><td>" + name + "</td></tr>";
                     $('#userTable').append(trElement);
                     $('#userTable > tr').click(function(){
-                        $this
+                        $(this)
                             .fadeOut("slow", function(){
                                 $(this).remove;
                             });
