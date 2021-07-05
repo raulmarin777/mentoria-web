@@ -8,7 +8,7 @@
         
     $pdo = new \PDO($dsn, $dbuser, $dbpassword);
 
-    $sql ="SELECT * FROM users";
+    $sql ="SELECT * FROM users2";
     $statement = $pdo->prepare($sql);
     $statement->execute();
 
