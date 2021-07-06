@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo Promesas</title>
+</head>
+<body>
+    <button id="trigger-button">Trigger</button>
+    <script>
+        /*document
+            .getElementById('trigger-button')
+            .addEventListener('click', (event) => {
+                console.log("clic");
+                let promise = new Promise((resolve, reject) => {
+                    setTimeout(() => {
+                        //resolve('Promesa Ejecutada')
+                        reject('La promesa Fallo')
+                    }, 500)
+                });
+
+                console.log(promise)
+
+                promise
+                    .then(result =>{
+                        console.log(result)
+                })
+                    .catch(err =>{
+                        console.info(err)
+                })        
+            });*/
+        document
+            .getElementById('trigger-button')
+            .addEventListener('click', (event) => { 
+                fetch('http://www.mentoria7.segic.cl/eje_javascript_3/api.php')
+                    .then(res => res.json()) 
+                    .then(data => {
+                        console.log(data)
+                    })
+            });  
+    </script>
+</body>
+</html>
