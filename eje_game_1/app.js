@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let timerLeft
     let timerRight
 
+
     let isGoingLeft = false
     let isGoingRight = false
     let isJumping = false
@@ -108,5 +109,4 @@ document.addEventListener('DOMContentLoaded', () => {
                 break; 
         }
     })
-    
 })
