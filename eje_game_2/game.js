@@ -10,7 +10,8 @@ loadSprite('brick', 'assets/brick.png')
 loadSprite('coin', 'assets/coin.png')
 loadSprite('evil-shroom', 'assets/evil-shroom.png')
 loadSprite('block', 'assets/block.png')
-loadSprite('mario', 'assets/mario.png')
+loadSprite('mario_r', 'assets/mario_r.png')
+loadSprite('mario_l', 'assets/mario_l.png')
 loadSprite('mushroom', 'assets/mushroom.png')
 loadSprite('surprise', 'assets/surprise-block.png')
 loadSprite('unboxed', 'assets/unboxed.png')
@@ -19,7 +20,9 @@ loadSprite('pipe-top-right', 'assets/pipe-top-right.png')
 loadSprite('pipe-bottom-left', 'assets/pipe-bottom-left.png')
 loadSprite('pipe-bottom-right', 'assets/pipe-bottom-right.png')
 
-loadSound('mario-theme','assets/super-mario-theme.ogg')
+loadSound('mario-theme','sounds/super-mario-theme.ogg')
+loadSound('mario-coin','sounds/coin.ogg')
+loadSound('mario-jump','sounds/jump.ogg')
 
 const MOVE_SPEED = 120
 const ENEMY_SPEED = 70
@@ -67,7 +70,7 @@ scene("game", () => {
     const gameLevel = addLevel(map, levelConfig)
 
     const player = add([
-        sprite('mario'),
+        sprite('mario_r'),
         solid(),
         pos(30,0),
         body(),
@@ -98,6 +101,7 @@ scene("game", () => {
     })
 
     keyDown('space', () => {
+        const jump = play("mario-jump")
         if (player.grounded()) {
             isJumping = true
             if (player.isBig()){
@@ -134,6 +138,7 @@ scene("game", () => {
     })
 
     player.collides('coin', (d)=>{
+        const coin = play("mario-coin")
         destroy(d)
     })
 
