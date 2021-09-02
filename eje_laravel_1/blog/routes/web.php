@@ -20,36 +20,9 @@ use Illuminate\Support\Facades\File;
 Route::get('/', function () {
     // crea cache
     // $posts = cache()->rememberForever('posts_all',  fn () => Post::all()  );
+
     $posts = Post::all();
-
-    /* foreach ($files as $file){
-        $document=YamlFrontMatter::parseFile($file);
-        $posts[] = new Post(
-                        $document->title,
-                        $document->resumen,
-                        $document->date,
-                        $document->body()
-                        );
-    }*/
-
-    /*$posts = array_map(function($file){
-        $document=YamlFrontMatter::parseFile($file);
-        return new Post(
-                        $document->title,
-                        $document->resumen,
-                        $document->date,
-                        $document->body()
-                        );
-    }, $files);*/
-
-   /* $posts = collect(File::files(resource_path("posts/")))
-        ->map(fn($file) => YamlFrontMatter::parseFile($file)); // arreglo de documentos
-        ->map(fn($document) => Post::createFromDocument($document));
-    */
-    //ddd ($document);
-    //ddd ($document->title);
-
-    return view ('posts', [
+    return view('posts', [
         'posts' => $posts
     ]);
 });
