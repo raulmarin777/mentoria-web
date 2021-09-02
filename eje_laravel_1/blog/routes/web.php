@@ -18,8 +18,10 @@ use Illuminate\Support\Facades\File;
 
 
 Route::get('/', function () {
-    $posts = cache()->rememberForever('posts_all',  fn () => Post::all()  );
-    
+    // crea cache
+    // $posts = cache()->rememberForever('posts_all',  fn () => Post::all()  );
+    $posts = Post::all();
+
     /* foreach ($files as $file){
         $document=YamlFrontMatter::parseFile($file);
         $posts[] = new Post(
