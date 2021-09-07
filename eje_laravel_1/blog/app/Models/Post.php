@@ -12,4 +12,9 @@ class Post extends Model
     public $fillable = ['title','resumen','body']; //permite el ingreso por tinker (massivo)
     //protected $guarded = [];// no protege nada al ingreso masivo por tinker
     //protected $guarded = ['id'];// no protege nada al ingreso masivo por tinker excepto el id
+
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
 }
