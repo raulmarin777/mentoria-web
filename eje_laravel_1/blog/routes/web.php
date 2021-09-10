@@ -20,6 +20,10 @@ Route::get('/', function () {
     // crea cache
     // $posts = cache()->rememberForever('posts_all',  fn () => Post::all()  );
 
+    Illuminate\Support\Facades\DB::listen(function($query){
+        logger($query->sql);
+    });
+
     $posts = Post::all();
     return view('posts', [
         'posts' => $posts
