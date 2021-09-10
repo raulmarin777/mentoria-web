@@ -2,8 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Models\Post;
-use Spatie\YamlFrontMatter\YamlFrontMatter;
-use Illuminate\Support\Facades\File;
+use App\Models\Category;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,7 +32,10 @@ Route::get('/post/{post}', function (Post $post) {
     ]);
 }); // validacion de caracteres en url-> where('post', '[A-Za-z\_-]+');
      
-
+Route::get('/category/{category}', function (Category $category) {
+    return 'categorias';
+}); // validacion de caracteres en url-> where('post', '[A-Za-z\_-]+');
+    
 
 //Route::get('/', fn () => view ('welcome'));
 //Route::get('/', fn () => 'Hola Segic');

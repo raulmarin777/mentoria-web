@@ -14,6 +14,9 @@
                         {{ $post->title }}
                     </a>
                 </h1>
+                <a href="/category/{{$post->category->id}}">
+                    {{$post->category->name}}
+                </a>    
                 <p>{!! $post->resumen !!}</p>
             </article>
         @endforeach
