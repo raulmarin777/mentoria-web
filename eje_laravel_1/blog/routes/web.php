@@ -21,7 +21,7 @@ Route::get('/', function () {
     // $posts = cache()->rememberForever('posts_all',  fn () => Post::all()  );
 
     Illuminate\Support\Facades\DB::listen(function($query){
-        logger($query->sql);
+        logger($query->sql, $query->bindings);
     });
 
     $posts = Post::all();
