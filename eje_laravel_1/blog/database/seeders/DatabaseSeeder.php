@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use App\Models\Category;
 use App\Models\User;
+use App\Models\Post;
 
 class DatabaseSeeder extends Seeder
 {
@@ -15,20 +16,35 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        //\App\Models\User::factory(10)->create();
-        \App\Models\User::factory(1)->create();
+        User::truncate();
+        Category::truncate();
 
-        Category::create([
+        //\App\Models\User::factory(10)->create();
+        $user = User::factory()->create();
+
+
+        $personal = Category::create([
             'name' => 'Personal',
             'slug' => 'personal'
         ]);
-        Category::create([
+
+        $work = Category::create([
             'name' => 'Work',
             'slug' => 'work'
         ]);
-        Category::create([
+
+        $hobbies = Category::create([
             'name' => 'Hobbies',
             'slug' => 'hobbies'
+        ]);
+
+        Post::create([
+            'category_id' => $work->id,
+            'user_id' =>  $user->id,
+            'title' => 'My First post',
+            'slug' => 'my-First-post',
+            'resumen' => 'There is no one who loves pain itself, who seeks after it and wants to have it, simply because it is pain...',
+            'body' => 'Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...'
         ]);
     }
 }
