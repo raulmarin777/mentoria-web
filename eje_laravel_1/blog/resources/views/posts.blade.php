@@ -14,9 +14,12 @@
                         {{ $post->title }}
                     </a>
                 </h1>
-                <a href="/category/{{$post->category->slug}}">
-                    {{$post->category->name}}
-                </a>    
+                <p>
+                    By <a href="#"> Raul Marin</a> in
+                    <a href="/category/{{$post->category->slug}}">
+                        {{$post->category->name}}
+                    </a>    
+                </p>
                 <p>{!! $post->resumen !!}</p>
             </article>
         @endforeach
