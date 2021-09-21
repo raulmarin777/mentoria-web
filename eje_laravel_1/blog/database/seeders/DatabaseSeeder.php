@@ -18,9 +18,11 @@ class DatabaseSeeder extends Seeder
     {
         User::truncate();
         Category::truncate();
+        
+        Post::factory()->create();
 
         //\App\Models\User::factory(10)->create();
-        $user = User::factory()->create();
+      /*  $user = User::factory()->create();
 
 
         $personal = Category::create([
@@ -45,6 +47,6 @@ class DatabaseSeeder extends Seeder
             'slug' => 'my-First-post',
             'resumen' => 'There is no one who loves pain itself, who seeks after it and wants to have it, simply because it is pain...',
             'body' => 'Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...'
-        ]);
+        ]);*/
     }
 }
