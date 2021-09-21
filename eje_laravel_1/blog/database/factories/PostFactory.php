@@ -29,7 +29,8 @@ class PostFactory extends Factory
             'slug' => $this->faker->unique()->slug(),
             'title'=> $this->faker->sentence(),
             'resumen'=> $this->faker->sentence(),
-            'body'=> $this->faker->paragraph()
+            'body'=> $this->faker->paragraph(),
+            'published_at'=>getdate(),
         ];
     }
 }
