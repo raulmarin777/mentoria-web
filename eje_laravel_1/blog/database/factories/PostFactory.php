@@ -30,7 +30,7 @@ class PostFactory extends Factory
             'title'=> $this->faker->sentence(),
             'resumen'=> $this->faker->sentence(),
             'body'=> $this->faker->paragraph(),
-            'published_at'=>date("Y-m-d"),
+            'published_at'=>$this->faker->dateTimeBetween("-1 years"),
         ];
     }
 }
