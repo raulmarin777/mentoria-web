@@ -26,7 +26,7 @@
 
             <div class="text-sm mt-2">
                 <p>
-                    {{ $post->resumen }}
+                    {{ $post->resumen }} 
                 </p>
             </div>
 
