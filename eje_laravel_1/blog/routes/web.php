@@ -21,9 +21,9 @@ Route::get('/', function () {
     // crea cache
     // $posts = cache()->rememberForever('posts_all',  fn () => Post::all()  );
 
-    Illuminate\Support\Facades\DB::listen(function($query){
+    /*Illuminate\Support\Facades\DB::listen(function($query){
         logger($query->sql, $query->bindings);
-    });
+    });*/
 
     //$posts = Post::all();
     // al usa Post:: se puede accedero al metodo sin necesidad de creaar un onbeto (new)
