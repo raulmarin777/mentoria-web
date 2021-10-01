@@ -96,7 +96,7 @@
 
                                     <span class="mt-2 block text-gray-400 text-xs">
                                         Published <time>1 day ago</time>
-                                    </span>
+                                    </span> 
                                 </div>
                             </header>
 
