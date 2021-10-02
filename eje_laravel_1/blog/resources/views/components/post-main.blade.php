@@ -12,10 +12,6 @@
                     <a href="#"  class="px-3 py-1 border border-blue-300 rounded-full text-blue-300 text-xs uppercase font-semibold" style="font-size: 10px">
                         {{ $post->category->name }}
                     </a>
-
-                    <a href="#"
-                        class="px-3 py-1 border border-red-300 rounded-full text-red-300 text-xs uppercase font-semibold"
-                        style="font-size: 10px">Updates</a>
                 </div>
 
                 <div class="mt-4">
@@ -47,9 +43,9 @@
                 </div>
 
                 <div class="hidden lg:block">
-                    <a href="#"
-                        class="transition-colors duration-300 text-xs font-semibold bg-gray-200 hover:bg-gray-300 rounded-full py-2 px-8"
-                    >Read More</a>
+                    <a href="/post/{{ $post->slug }}" class="transition-colors duration-300 text-xs font-semibold bg-gray-200 hover:bg-gray-300 rounded-full py-2 px-8"
+                        >Read More
+                    </a>
                 </div>
             </footer>
         </div>
