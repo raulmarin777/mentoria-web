@@ -16,14 +16,13 @@ use App\Models\User;
 |
 */
 
-
 Route::get('/', function () {
     // crea cache
     // $posts = cache()->rememberForever('posts_all',  fn () => Post::all()  );
 
-    /*Illuminate\Support\Facades\DB::listen(function($query){
+    Illuminate\Support\Facades\DB::listen(function($query){
         logger($query->sql, $query->bindings);
-    });*/
+    });
 
     //$posts = Post::all();
     // al usa Post:: se puede accedero al metodo sin necesidad de creaar un onbeto (new)
@@ -32,6 +31,7 @@ Route::get('/', function () {
                        ->with(['category','author'])
                        ->get()
     ]);
+    
 });
 
 Route::get('/post/{post}', function (Post $post) {
@@ -39,13 +39,12 @@ Route::get('/post/{post}', function (Post $post) {
         'post' => $post,
     ]);
 }); // validacion de caracteres en url-> where('post', '[A-Za-z\_-]+');
-     
+
 Route::get('/category/{category:slug}', function (Category $category) {
     return view ('posts', [
         'posts' => $category->posts->load(['category','author']),
     ]);
 }); // validacion de caracteres en url-> where('post', '[A-Za-z\_-]+');
-
 
 Route::get('/author/{author}', function (User $author) {
     //ddd($author->posts);
