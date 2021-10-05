@@ -10,9 +10,9 @@
         </div>
 
         <div class="lg:grid lg:grid-cols-3">
-            <x-post-card />
-            <x-post-card />
-            <x-post-card />
+            @foreach ($posts->skip(1) as $post)
+                <x-post-card />
+            @endfor
         </div>
     </main>
 </x-layout>
