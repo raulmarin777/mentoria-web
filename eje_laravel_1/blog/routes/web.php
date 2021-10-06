@@ -42,10 +42,10 @@ Route::get('/post/{post}', function (Post $post) {
 
 Route::get('/category/{category:slug}', function (Category $category) {
     return view ('posts', [
-        //'posts' => $category->posts->load(['category','author']),
-        'posts' => Post::latest('published_at')
-        ->with(['category','author'])
-        ->get()
+        'posts' => $category->posts->with(['category','author'])
+        //'posts' => Post::latest('published_at')
+        //                ->with(['category','author'])
+                        ->get()
     ]);
 }); // validacion de caracteres en url-> where('post', '[A-Za-z\_-]+');
 
