@@ -14,7 +14,7 @@
     <div class="space-y-2 lg:space-y-0 lg:space-x-4 mt-8">
         <!--  Category -->
         <div class="relative flex lg:inline-flex items-center bg-gray-100 rounded-xl">
-            <div x-data="{ show: false}">
+            <div x-data="{ show: false }">
                 <button @click="show = !show">Category</button>
                 <a href="#" x-show="show">One</a>
                 <a href="#" x-show="show">Two</a>
