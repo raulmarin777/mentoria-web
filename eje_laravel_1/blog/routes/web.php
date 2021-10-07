@@ -50,7 +50,7 @@ Route::get('/category/{category:slug}', function (Category $category) {
                     ->get()
 
     ]);
-}) -> where('posts', $category) ; // validacion de caracteres en url-> where('post', '[A-Za-z\_-]+');
+}) -> where('category', $category) ; // validacion de caracteres en url-> where('post', '[A-Za-z\_-]+');
 
 
 
