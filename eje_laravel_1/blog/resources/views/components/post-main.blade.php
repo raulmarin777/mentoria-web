@@ -20,7 +20,7 @@
                     </h1>
 
                     <span class="mt-2 block text-gray-400 text-xs">
-                            Publishedeeeeeeeeeeeeeeeeeeeeee <time>{{ $post->created_at->diffForHumans() }}</time>
+                            Published (main) <time>{{ $post->created_at->diffForHumans() }}</time>
                     </span>
                 </div>
             </header>
