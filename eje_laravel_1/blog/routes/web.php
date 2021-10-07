@@ -40,11 +40,19 @@ Route::get('/post/{post}', function (Post $post) {
     ]);
 }); // validacion de caracteres en url-> where('post', '[A-Za-z\_-]+');
 
+
+
 Route::get('/category/{category:slug}', function (Category $category) {
     return view ('categorys', [
-        'posts' => $category->posts->load(['category','author']),
+        /*'posts' => $category->posts->load(['category','author']),*/
+        'posts' => Post::latest('published_at')
+                       ->with(['category','author'])
+                       ->get()
+
     ]);
 }); // validacion de caracteres en url-> where('post', '[A-Za-z\_-]+');
+
+
 
 Route::get('/author/{author}', function (User $author) {
     //ddd($author->posts);
