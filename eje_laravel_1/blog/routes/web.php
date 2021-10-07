@@ -43,7 +43,7 @@ Route::get('/post/{post}', function (Post $post) {
 
 
 Route::get('/category/{category:slug}', function (Category $category) {
-    return view ('categorys', [
+    return view ('categories', [
         'posts' => $category->posts->load(['category','author']),
         /*'posts' =>  Post::join('categories','categories.id','=','posts.category_id')
                     ->where('posts.category_id',  $category->id)
