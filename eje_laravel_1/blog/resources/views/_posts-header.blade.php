@@ -30,7 +30,7 @@
                 </button>
                 <div x-show="show" class="py-2 absolute bg-gray-100 w-full mt-2 rounded-xl z-50 text-left px-3 text-sm leading-6" style="display: none;">
                     @foreach ($categories as $category)
-                        <a href="/category/{{ $category-slug }}" 
+                        <a href="/category/{{ $category->slug }}" 
                         class="block text-left px-3 text-sm leading-6 hover:bg-blue-500 hover:text-white
                             {{ isset($currentCategory) && $currentCategory->is($category) ? 'bg-blue-500 text-white' : '' }}">
                             {{ ucwords($category->name) }} 
