@@ -46,6 +46,7 @@ Route::get('/post/{post}', function (Post $post) {
 Route::get('/category/{category:slug}', function (Category $category) {
     return view ('posts', [
         'posts' => $category->posts->load(['category','author']),
+        'categories' => Category::all()
         /*'posts' =>  Post::join('categories','categories.id','=','posts.category_id')
                     ->where('posts.category_id',  $category->id)
                     ->latest('published_at')
@@ -65,6 +66,7 @@ Route::get('/author/{author}', function (User $author) {
         //load es para variables with para llamados metodos estaticos (::)
         //(carga automaticamente las relaciones de la BD)
         'posts' => $author->posts->load(['category','author']),
+        'categories' => Category::all()
     ]);
 });
 
