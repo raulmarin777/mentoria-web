@@ -19,9 +19,9 @@
                     Category
                 </button>
                 <div x-show="show" class="py-2 absolute bg-gray-100 w-full mt-2 rounded-xl">
-                    <a href="#" class="block text-left px-3 text-sm">One</a>
-                    <a href="#" class="block text-left px-3 text-sm">Two</a>
-                    <a href="#" class="block text-left px-3 text-sm">Three</a>               
+                    <a href="#" class="block text-left px-3 text-sm leading-6">One</a>
+                    <a href="#" class="block text-left px-3 text-sm leading-6">Two</a>
+                    <a href="#" class="block text-left px-3 text-sm leading-6">Three</a>               
                 </div>
 
             </div>
