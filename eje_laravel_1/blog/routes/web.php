@@ -46,7 +46,8 @@ Route::get('/post/{post}', function (Post $post) {
 Route::get('/category/{category:slug}', function (Category $category) {
     return view ('posts', [
         'posts' => $category->posts->load(['category','author']),
-        'categories' => Category::all()
+        'categories' => Category::all(),
+        'currentCategory' => $category
         /*'posts' =>  Post::join('categories','categories.id','=','posts.category_id')
                     ->where('posts.category_id',  $category->id)
                     ->latest('published_at')
