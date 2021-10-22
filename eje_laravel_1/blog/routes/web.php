@@ -33,7 +33,7 @@ Route::get('/', function () {
         'categories' => Category::all(),
     ]);
     
-});
+})->name('home');
 
 Route::get('/post/{post}', function (Post $post) {
     return view ('post', [
