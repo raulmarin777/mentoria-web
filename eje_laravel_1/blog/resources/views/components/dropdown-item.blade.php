@@ -8,6 +8,6 @@ if ($actived){
 }
 
 @endphp
-<a {{ attributes (['class' => $classes]) }} >
+<a {{ $attributes (['class' => $classes]) }} >
     {{ $slot }} 
 </a>  
