@@ -1,4 +1,5 @@
 @props(['name'])
+
 @if ($name === 'down-arrow')
 <svg {{ $attributes(['class' => 'transform -rotate-90']) }} width="22" height="22" viewBox="0 0 22 22">
     <g fill="none" fill-rule="evenodd">
