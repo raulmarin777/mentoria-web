@@ -20,10 +20,18 @@ class Post extends Model
     }
 
     public function scopeFilter($query, array $filters){
-        if ($filters('search') ?? false) {
+
+        $query->when(
+            isset($filters['search']),
+            fn($query, $search) =>
+            $query->where('title','like',"%$search%")
+                  ->orWhere('resumen','like',"%$search%")
+        );
+
+/*        if ($filters('search') ?? false) {
             return $query->where('title','like','%' . $filters('search') . '%' )
                         ->orWhere('resumen','like','%' . $filters('search') . '%' );
-        }
+        }*/
     }
 
     //hasOne, hasMany, belongsTo, belongsToMany
