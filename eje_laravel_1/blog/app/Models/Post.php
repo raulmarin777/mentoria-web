@@ -28,9 +28,9 @@ class Post extends Model
                   ->orWhere('resumen','like',"%$search%")
         );*/
 
-        if ($filters('search') ?? false) {
-            return $query->where('title','like','%' . $filters('search') . '%' )
-                        ->orWhere('resumen','like','%' . $filters('search') . '%' );
+        if ($filters['search'] ?? false) {
+            return $query->where('title','like','%' . $filters['search'] . '%' )
+                        ->orWhere('resumen','like','%' . $filters['search'] . '%' );
         }
     }
 
