@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use app\Models\Post;
-use app\Models\Category;
+use App\Models\Post;
+use App\Models\Category;
 
 class PostController extends Controller
 {
@@ -19,8 +19,8 @@ class PostController extends Controller
 
         return view('posts', [
             'posts' => Post::latest('published_at')
-                    ->filter(request(['search']))
-                    ->get(),
+                        ->filter(request(['search']))
+                        ->get(),
             'categories' => Category::all(),
         ]);
     }
