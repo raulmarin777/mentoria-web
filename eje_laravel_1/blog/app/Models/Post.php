@@ -18,6 +18,13 @@ class Post extends Model
         return 'slug';
     }
 
+    public function scopeFilter($query){
+        if (request('search')){
+            return $query->where('title','like','%' . request('search') . '%' )
+                        ->orWhere('resumen','like','%' . request('search') . '%' );
+        }
+    }
+
     //hasOne, hasMany, belongsTo, belongsToMany
     public function category()
     {

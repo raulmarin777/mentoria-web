@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
 use App\Models\Post;
 use App\Models\Category;
@@ -16,6 +17,10 @@ use App\Models\User;
 |
 */
 
+Route::get('/', [PostController::class, 'index'])->name('home');
+Route::get('/post/{post}', [PostController::class, 'show']);
+
+/*
 Route::get('/', function () {
     // crea cache
     // $posts = cache()->rememberForever('posts_all',  fn () => Post::all()  );
@@ -42,14 +47,14 @@ Route::get('/', function () {
         'categories' => Category::all(),
     ]);
     
-})->name('home');
+})->name('home');*/
 
-Route::get('/post/{post}', function (Post $post) {
+/*Route::get('/post/{post}', function (Post $post) {
     return view ('post', [
         'post' => $post,
     ]);
 }); // validacion de caracteres en url-> where('post', '[A-Za-z\_-]+');
-
+*/
 
 
 Route::get('/category/{category:slug}', function (Category $category) {
