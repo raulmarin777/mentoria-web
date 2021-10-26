@@ -23,13 +23,22 @@ Route::get('/', function () {
     Illuminate\Support\Facades\DB::listen(function($query){
         logger($query->sql, $query->bindings);
     });
-
     //$posts = Post::all();
     // al usa Post:: se puede accedero al metodo sin necesidad de creaar un onbeto (new)
+    //dd(request(['search'])); //valor
+    //dd(request('search')); //valor
+
+
+    $posts = Post::latest('published_at')
+                ->with(['category','author']);
+
+    if (request('search')){
+        $posts->where('title','like','%' . request('search') . '%' )
+              ->orWhere('resumen','like','%' . request('search') . '%' );
+    }
+
     return view('posts', [
-        'posts' => Post::latest('published_at')
-                       ->with(['category','author'])
-                       ->get(),
+        'posts' => $posts->get(),
         'categories' => Category::all(),
     ]);
     
