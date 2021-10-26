@@ -13,15 +13,16 @@ class Post extends Model
     //protected $guarded = [];// no protege nada al ingreso masivo por tinker
     //protected $guarded = ['id'];// no protege nada al ingreso masivo por tinker excepto el id
 
+    public $with = ['category','author'];
     public function getRouteKeyName()
     {
         return 'slug';
     }
 
-    public function scopeFilter($query){
-        if (request('search')){
-            return $query->where('title','like','%' . request('search') . '%' )
-                        ->orWhere('resumen','like','%' . request('search') . '%' );
+    public function scopeFilter($query, array $filters){
+        if ($filters('search') ?? false) {
+            return $query->where('title','like','%' . $filters('search') . '%' )
+                        ->orWhere('resumen','like','%' . $filters('search') . '%' );
         }
     }
 
