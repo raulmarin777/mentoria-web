@@ -10,7 +10,7 @@
                     <x-post-card :post="$post" class="{{ $loop->iteration < 3 ? 'col-span-3' : 'col-span-2' }}"/>
                 @endforeach
             </div>
-            {{ $posts->link}}
+            {{ $posts->links() }}
         @else
             <p class="text-center">No posts yet.</p>
         @endif
