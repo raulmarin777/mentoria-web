@@ -20,7 +20,7 @@ class PostController extends Controller
 
         return Post::latest('published_at')
                         ->filter(request(['search', 'category']))
-                        ->get();
+                        ->paginate();
 
         /*return view('posts', [
             'posts' => Post::latest('published_at')
